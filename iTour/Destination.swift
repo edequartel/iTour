@@ -10,11 +10,12 @@ import SwiftData
 
 @Model
 class Destination {
-    var name: String
-    var details: String
-    var date: Date
-    var priority: Int
-    @Relationship(deleteRule: .cascade) var sights = [Sight]()
+    var name: String = ""
+    var details: String = ""
+    var date: Date = Date()
+    var priority: Int = 0
+//    @Relationship(deleteRule: .cascade) var sights = [Sight]()
+//    @Relationship(deleteRule: .cascade) var sights: [Sight]?
 
     init(name: String = "", details: String = "", date: Date = .now, priority: Int = 2) {
         self.name = name

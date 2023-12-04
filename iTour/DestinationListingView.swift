@@ -11,6 +11,8 @@ import SwiftUI
 struct DestinationListingView: View {
     @Environment(\.modelContext) var modelContext
     @Query(sort: [SortDescriptor(\Destination.priority, order: .reverse), SortDescriptor(\Destination.name)]) var destinations: [Destination]
+    
+    @State var showingPopup = false
 
     var body: some View {
         List {
@@ -20,7 +22,7 @@ struct DestinationListingView: View {
                         Text(destination.name)
                             .font(.headline)
 
-                        Text(destination.date.formatted(date: .long, time: .shortened))
+                        Text(getFormattedDate(date: destination.date))
                     }
                 }
             }
@@ -46,6 +48,14 @@ struct DestinationListingView: View {
     }
 }
 
+func getFormattedDate(date: Date = Date()) -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "EE, d-MM-yy" // Customize the format as needed
+    return dateFormatter.string(from: date)
+}
+
 #Preview {
     DestinationListingView(sort: SortDescriptor(\Destination.name), searchString: "")
 }
+
+

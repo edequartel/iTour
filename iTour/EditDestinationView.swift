@@ -15,43 +15,46 @@ struct EditDestinationView: View {
     var body: some View {
         Form {
             TextField("Name", text: $destination.name)
+//            TextEditor(text: $destination.details)
+//                                    .frame(minHeight: 100)
             TextField("Details", text: $destination.details, axis: .vertical)
-            DatePicker("Date", selection: $destination.date)
+            DatePicker("Date", selection: $destination.date, displayedComponents: .date)
+                .datePickerStyle(.compact)
 
             Section("Priority") {
                 Picker("Priority", selection: $destination.priority) {
-                    Text("Meh").tag(1)
-                    Text("Maybe").tag(2)
-                    Text("Must").tag(3)
+                    Text("-").tag(1)
+                    Text("++").tag(2)
+                    Text("+++").tag(3)
                 }
                 .pickerStyle(.segmented)
             }
 
-            Section("Sights") {
-                ForEach(destination.sights) { sight in
-                    Text(sight.name)
-                }
-
-                HStack {
-                    TextField("Add a new sight in \(destination.name)", text: $newSightName)
-
-                    Button("Add", action: addSight)
-                }
-            }
+//            Section("Sights") {
+//                ForEach(destination.sights) { sight in
+//                    Text(sight.name)
+//                }
+//
+//                HStack {
+//                    TextField("Add a new sight in \(destination.name)", text: $newSightName)
+//
+//                    Button("Add", action: addSight)
+//                }
+//            }
         }
         .navigationTitle("Edit Destination")
         .navigationBarTitleDisplayMode(.inline)
     }
 
-    func addSight() {
-        guard newSightName.isEmpty == false else { return }
-
-        withAnimation {
-            let sight = Sight(name: newSightName)
-            destination.sights.append(sight)
-            newSightName = ""
-        }
-    }
+//    func addSight() {
+//        guard newSightName.isEmpty == false else { return }
+//
+//        withAnimation {
+//            let sight = Sight(name: newSightName)
+//            destination.sights.append(sight)
+//            newSightName = ""
+//        }
+//    }
 }
 
 #Preview {
