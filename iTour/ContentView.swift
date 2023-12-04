@@ -12,7 +12,7 @@ struct ContentView: View {
     @Environment(\.modelContext) var modelContext
 
     @State private var path = [Destination]()
-    @State private var sortOrder = SortDescriptor(\Destination.name)
+    @State private var sortOrder = SortDescriptor(\Destination.date)
     @State private var searchText = ""
 
     var body: some View {

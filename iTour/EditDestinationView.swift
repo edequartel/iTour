@@ -14,10 +14,13 @@ struct EditDestinationView: View {
 
     var body: some View {
         Form {
+            TextField("Dag", text: $destination.day)
             TextField("Name", text: $destination.name)
 //            TextEditor(text: $destination.details)
 //                                    .frame(minHeight: 100)
+            TextField("Residence", text: $destination.residence)
             TextField("Details", text: $destination.details, axis: .vertical)
+            
             DatePicker("Date", selection: $destination.date, displayedComponents: .date)
                 .datePickerStyle(.compact)
 

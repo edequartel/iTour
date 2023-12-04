@@ -19,10 +19,17 @@ struct DestinationListingView: View {
             ForEach(destinations) { destination in
                 NavigationLink(value: destination) {
                     VStack(alignment: .leading) {
-                        Text(destination.name)
-                            .font(.headline)
-
+                        HStack{
+                            Text(destination.day)
+                            Text(destination.name)
+                                .font(.headline)
+                            
+                        }
+                        Text(destination.residence)
+                            .font(.subheadline)
+                            .foregroundColor(.blue)
                         Text(getFormattedDate(date: destination.date))
+                            .font(.subheadline)
                     }
                 }
             }

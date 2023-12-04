@@ -10,9 +10,11 @@ import SwiftData
 
 @Model
 class Destination {
+    var day: String = ""
     var name: String = ""
     var details: String = ""
     var date: Date = Date()
+    var residence: String = ""
     var priority: Int = 0
 //    @Relationship(deleteRule: .cascade) var sights = [Sight]()
 //    @Relationship(deleteRule: .cascade) var sights: [Sight]?
