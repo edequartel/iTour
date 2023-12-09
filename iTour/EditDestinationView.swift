@@ -7,23 +7,43 @@
 
 import SwiftUI
 import SwiftData
+import HighlightedTextEditor
 
 struct EditDestinationView: View {
     @Bindable var destination: Destination
     @State private var newSightName = ""
-
+    
     var body: some View {
         Form {
             TextField("Dag", text: $destination.day)
             TextField("Name", text: $destination.name)
-//            TextEditor(text: $destination.details)
-//                                    .frame(minHeight: 100)
+            //            TextEditor(text: $destination.details)
+            //                                    .frame(minHeight: 100)
             TextField("Residence", text: $destination.residence)
             TextField("Details", text: $destination.details, axis: .vertical)
+            //
+            HStack {
+                
+                Button("Open") {
+                    if let url = URL(string: destination.link) {
+                        UIApplication.shared.open(url)
+                    } else {
+                        // Handle invalid URL
+                        print("Invalid URL")
+                    }
+                }
+                Spacer()
+                TextField("Link", text: $destination.link)
+                
+            }
+            
+            HighlightedTextEditor(text: $destination.comments, highlightRules: .markdown)
+                            .frame(height: 300)
+
             
             DatePicker("Date", selection: $destination.date, displayedComponents: .date)
                 .datePickerStyle(.compact)
-
+            
             Section("Priority") {
                 Picker("Priority", selection: $destination.priority) {
                     Text("-").tag(1)
@@ -32,32 +52,35 @@ struct EditDestinationView: View {
                 }
                 .pickerStyle(.segmented)
             }
-
-//            Section("Sights") {
-//                ForEach(destination.sights) { sight in
-//                    Text(sight.name)
-//                }
-//
-//                HStack {
-//                    TextField("Add a new sight in \(destination.name)", text: $newSightName)
-//
-//                    Button("Add", action: addSight)
-//                }
-//            }
+            
+            //            Section("Sights") {
+            //                ForEach(destination.sights) { sight in
+            //                    Text(sight.name)
+            //                }
+            //
+            //                HStack {
+            //                    TextField("Add a new sight in \(destination.name)", text: $newSightName)
+            //
+            //                    Button("Add", action: addSight)
+            //                }
+            //            }
         }
         .navigationTitle("Edit Destination")
         .navigationBarTitleDisplayMode(.inline)
     }
+    
+    //    func addSight() {
+    //        guard newSightName.isEmpty == false else { return }
+    //
+    //        withAnimation {
+    //            let sight = Sight(name: newSightName)
+    //            destination.sights.append(sight)
+    //            newSightName = ""
+    //        }
+    //    }
+    
+    
 
-//    func addSight() {
-//        guard newSightName.isEmpty == false else { return }
-//
-//        withAnimation {
-//            let sight = Sight(name: newSightName)
-//            destination.sights.append(sight)
-//            newSightName = ""
-//        }
-//    }
 }
 
 #Preview {

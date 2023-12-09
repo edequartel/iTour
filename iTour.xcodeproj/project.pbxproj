@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47AE02E72B24A76C003EBD81 /* HighlightedTextEditor in Frameworks */ = {isa = PBXBuildFile; productRef = 47AE02E62B24A76C003EBD81 /* HighlightedTextEditor */; };
 		47C860482B1DE4F700335A29 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 47C860472B1DE4F700335A29 /* PopupView */; };
 		5141A3DA2AC88CF6007CE882 /* DestinationListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5141A3D92AC88CF6007CE882 /* DestinationListingView.swift */; };
 		5141A3DC2AC891F8007CE882 /* Sight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5141A3DB2AC891F8007CE882 /* Sight.swift */; };
@@ -37,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47AE02E72B24A76C003EBD81 /* HighlightedTextEditor in Frameworks */,
 				47C860482B1DE4F700335A29 /* PopupView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -103,6 +105,7 @@
 			name = iTour;
 			packageProductDependencies = (
 				47C860472B1DE4F700335A29 /* PopupView */,
+				47AE02E62B24A76C003EBD81 /* HighlightedTextEditor */,
 			);
 			productName = iTour;
 			productReference = 514A1D2B2AC87E14004CBD3B /* iTour.app */;
@@ -134,6 +137,7 @@
 			mainGroup = 514A1D222AC87E14004CBD3B;
 			packageReferences = (
 				47C860462B1DE4F700335A29 /* XCRemoteSwiftPackageReference "PopupView" */,
+				47AE02E52B24A76C003EBD81 /* XCRemoteSwiftPackageReference "HighlightedTextEditor" */,
 			);
 			productRefGroup = 514A1D2C2AC87E14004CBD3B /* Products */;
 			projectDirPath = "";
@@ -378,6 +382,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		47AE02E52B24A76C003EBD81 /* XCRemoteSwiftPackageReference "HighlightedTextEditor" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kyle-n/HighlightedTextEditor";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.2;
+			};
+		};
 		47C860462B1DE4F700335A29 /* XCRemoteSwiftPackageReference "PopupView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/exyte/PopupView.git";
@@ -389,6 +401,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		47AE02E62B24A76C003EBD81 /* HighlightedTextEditor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 47AE02E52B24A76C003EBD81 /* XCRemoteSwiftPackageReference "HighlightedTextEditor" */;
+			productName = HighlightedTextEditor;
+		};
 		47C860472B1DE4F700335A29 /* PopupView */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 47C860462B1DE4F700335A29 /* XCRemoteSwiftPackageReference "PopupView" */;

@@ -13,21 +13,28 @@ struct DestinationListingView: View {
     @Query(sort: [SortDescriptor(\Destination.priority, order: .reverse), SortDescriptor(\Destination.name)]) var destinations: [Destination]
     
     @State var showingPopup = false
-
+    
     var body: some View {
         List {
             ForEach(destinations) { destination in
                 NavigationLink(value: destination) {
                     VStack(alignment: .leading) {
+                        
                         HStack{
+                            if (destination.comments.count>0) {
+                                Image(systemName: "book.pages")
+                            }
                             Text(destination.day)
                             Text(destination.name)
                                 .font(.headline)
+                                .lineLimit(1)
+                                .truncationMode(.tail)
                             
                         }
                         Text(destination.residence)
                             .font(.subheadline)
                             .foregroundColor(.blue)
+                        
                         Text(getFormattedDate(date: destination.date))
                             .font(.subheadline)
                     }
@@ -36,7 +43,7 @@ struct DestinationListingView: View {
             .onDelete(perform: deleteDestinations)
         }
     }
-
+    
     init(sort: SortDescriptor<Destination>, searchString: String) {
         _destinations = Query(filter: #Predicate {
             if searchString.isEmpty {
@@ -46,7 +53,7 @@ struct DestinationListingView: View {
             }
         }, sort: [sort])
     }
-
+    
     func deleteDestinations(_ indexSet: IndexSet) {
         for index in indexSet {
             let destination = destinations[index]
