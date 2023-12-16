@@ -20,6 +20,22 @@ struct EditDestinationView: View {
             //            TextEditor(text: $destination.details)
             //                                    .frame(minHeight: 100)
             TextField("Residence", text: $destination.residence)
+            //
+            HStack {
+                
+                Button("Open") {
+                    if let url = URL(string: destination.residenceLink) {
+                        UIApplication.shared.open(url)
+                    } else {
+                        // Handle invalid URL
+                        print("Invalid URL")
+                    }
+                }
+                Spacer()
+                TextField("Residence", text: $destination.residenceLink)
+                
+            }
+            //
             TextField("Details", text: $destination.details, axis: .vertical)
             //
             HStack {

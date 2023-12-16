@@ -23,6 +23,7 @@ struct DestinationListingView: View {
                         HStack{
                             if (destination.comments.count>0) {
                                 Image(systemName: "book.pages")
+//                                    .foregroundStyle(Color.black, Color.black)
                             }
                             Text(destination.day)
                             Text(destination.name)
@@ -31,9 +32,14 @@ struct DestinationListingView: View {
                                 .truncationMode(.tail)
                             
                         }
-                        Text(destination.residence)
-                            .font(.subheadline)
-                            .foregroundColor(.blue)
+                        HStack {
+                            if (destination.residenceLink.count>0) {
+                                Image(systemName: "house")
+                            }
+                            Text(destination.residence)
+                                .font(.subheadline)
+                                .foregroundColor(.blue)
+                        }
                         
                         Text(getFormattedDate(date: destination.date))
                             .font(.subheadline)
