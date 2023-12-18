@@ -8,6 +8,10 @@
 import SwiftUI
 import SwiftData
 import HighlightedTextEditor
+import W3WSwiftApi
+import W3WSwiftComponents
+import CoreLocation
+
 
 struct EditDestinationView: View {
     @Bindable var destination: Destination
@@ -16,13 +20,19 @@ struct EditDestinationView: View {
     var body: some View {
         Form {
             TextField("Dag", text: $destination.day)
+                .bold()
+            DatePicker("Date", selection: $destination.date, displayedComponents: .date)
+            
+                .datePickerStyle(.compact)
             TextField("Name", text: $destination.name)
-            //            TextEditor(text: $destination.details)
-            //                                    .frame(minHeight: 100)
-            TextField("Residence", text: $destination.residence)
+            TextField("Details", text: $destination.details, axis: .vertical)
+            
+            HStack {
+                Image(systemName: "house")
+                TextField("Residence", text: $destination.residence)
+            }
             //
             HStack {
-                
                 Button("Open") {
                     if let url = URL(string: destination.residenceLink) {
                         UIApplication.shared.open(url)
@@ -35,8 +45,6 @@ struct EditDestinationView: View {
                 TextField("Residence", text: $destination.residenceLink)
                 
             }
-            //
-            TextField("Details", text: $destination.details, axis: .vertical)
             //
             HStack {
                 
@@ -52,13 +60,14 @@ struct EditDestinationView: View {
                 TextField("Link", text: $destination.link)
                 
             }
+            //
+            
             
             HighlightedTextEditor(text: $destination.comments, highlightRules: .markdown)
-                            .frame(height: 300)
-
+                .frame(height: 150)
             
-            DatePicker("Date", selection: $destination.date, displayedComponents: .date)
-                .datePickerStyle(.compact)
+            HighlightedTextEditor(text: $destination.remarks, highlightRules: .markdown)
+                .frame(height: 300)
             
             Section("Priority") {
                 Picker("Priority", selection: $destination.priority) {
@@ -96,7 +105,7 @@ struct EditDestinationView: View {
     //    }
     
     
-
+    
 }
 
 #Preview {

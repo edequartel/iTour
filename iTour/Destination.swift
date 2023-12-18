@@ -19,6 +19,8 @@ class Destination {
     var link: String = ""
     var comments: String = ""
     var priority: Int = 0
+    var remarks: String = ""
+    var what3words: String = ""
 //    @Relationship(deleteRule: .cascade) var sights = [Sight]()
 //    @Relationship(deleteRule: .cascade) var sights: [Sight]?
 

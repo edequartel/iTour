@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4703E62F2B3017BE00869975 /* W3WSwiftComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 4703E62E2B3017BE00869975 /* W3WSwiftComponents */; };
+		4703E6312B3019E800869975 /* what3words.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4703E6302B3019E800869975 /* what3words.swift */; };
 		47AE02E72B24A76C003EBD81 /* HighlightedTextEditor in Frameworks */ = {isa = PBXBuildFile; productRef = 47AE02E62B24A76C003EBD81 /* HighlightedTextEditor */; };
 		47C860482B1DE4F700335A29 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 47C860472B1DE4F700335A29 /* PopupView */; };
 		5141A3DA2AC88CF6007CE882 /* DestinationListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5141A3D92AC88CF6007CE882 /* DestinationListingView.swift */; };
@@ -20,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4703E6302B3019E800869975 /* what3words.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = what3words.swift; sourceTree = "<group>"; };
 		47C860442B1DD83C00335A29 /* iTour.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iTour.entitlements; sourceTree = "<group>"; };
 		47C860452B1DD84A00335A29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5141A3D92AC88CF6007CE882 /* DestinationListingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationListingView.swift; sourceTree = "<group>"; };
@@ -38,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4703E62F2B3017BE00869975 /* W3WSwiftComponents in Frameworks */,
 				47AE02E72B24A76C003EBD81 /* HighlightedTextEditor in Frameworks */,
 				47C860482B1DE4F700335A29 /* PopupView in Frameworks */,
 			);
@@ -71,6 +75,7 @@
 				514A1D302AC87E14004CBD3B /* ContentView.swift */,
 				5141A3D92AC88CF6007CE882 /* DestinationListingView.swift */,
 				514A1D3E2AC888F0004CBD3B /* EditDestinationView.swift */,
+				4703E6302B3019E800869975 /* what3words.swift */,
 				514A1D3C2AC87E73004CBD3B /* Destination.swift */,
 				5141A3DB2AC891F8007CE882 /* Sight.swift */,
 				514A1D322AC87E15004CBD3B /* Assets.xcassets */,
@@ -106,6 +111,7 @@
 			packageProductDependencies = (
 				47C860472B1DE4F700335A29 /* PopupView */,
 				47AE02E62B24A76C003EBD81 /* HighlightedTextEditor */,
+				4703E62E2B3017BE00869975 /* W3WSwiftComponents */,
 			);
 			productName = iTour;
 			productReference = 514A1D2B2AC87E14004CBD3B /* iTour.app */;
@@ -138,6 +144,7 @@
 			packageReferences = (
 				47C860462B1DE4F700335A29 /* XCRemoteSwiftPackageReference "PopupView" */,
 				47AE02E52B24A76C003EBD81 /* XCRemoteSwiftPackageReference "HighlightedTextEditor" */,
+				4703E62D2B3017BE00869975 /* XCRemoteSwiftPackageReference "w3w-swift-components" */,
 			);
 			productRefGroup = 514A1D2C2AC87E14004CBD3B /* Products */;
 			projectDirPath = "";
@@ -167,6 +174,7 @@
 			files = (
 				514A1D312AC87E14004CBD3B /* ContentView.swift in Sources */,
 				514A1D2F2AC87E14004CBD3B /* iTourApp.swift in Sources */,
+				4703E6312B3019E800869975 /* what3words.swift in Sources */,
 				514A1D3D2AC87E73004CBD3B /* Destination.swift in Sources */,
 				5141A3DC2AC891F8007CE882 /* Sight.swift in Sources */,
 				514A1D3F2AC888F0004CBD3B /* EditDestinationView.swift in Sources */,
@@ -382,6 +390,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4703E62D2B3017BE00869975 /* XCRemoteSwiftPackageReference "w3w-swift-components" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/what3words/w3w-swift-components.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		47AE02E52B24A76C003EBD81 /* XCRemoteSwiftPackageReference "HighlightedTextEditor" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kyle-n/HighlightedTextEditor";
@@ -401,6 +417,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4703E62E2B3017BE00869975 /* W3WSwiftComponents */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4703E62D2B3017BE00869975 /* XCRemoteSwiftPackageReference "w3w-swift-components" */;
+			productName = W3WSwiftComponents;
+		};
 		47AE02E62B24A76C003EBD81 /* HighlightedTextEditor */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 47AE02E52B24A76C003EBD81 /* XCRemoteSwiftPackageReference "HighlightedTextEditor" */;

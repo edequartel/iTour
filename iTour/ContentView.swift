@@ -23,6 +23,8 @@ struct ContentView: View {
                 .searchable(text: $searchText)
                 .toolbar {
                     Button("Add Destination", systemImage: "plus", action: addDestination)
+                    
+                    Button("Print", systemImage: "printer", action: printToPDF)
 
                     Menu("Sort", systemImage: "arrow.up.arrow.down") {
                         Picker("Sort", selection: $sortOrder) {
@@ -45,6 +47,10 @@ struct ContentView: View {
         let destination = Destination()
         modelContext.insert(destination)
         path = [destination]
+    }
+    
+    func printToPDF() {
+        
     }
 }
 

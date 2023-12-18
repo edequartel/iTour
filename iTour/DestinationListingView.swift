@@ -21,16 +21,13 @@ struct DestinationListingView: View {
                     VStack(alignment: .leading) {
                         
                         HStack{
-                            if (destination.comments.count>0) {
-                                Image(systemName: "book.pages")
-//                                    .foregroundStyle(Color.black, Color.black)
-                            }
                             Text(destination.day)
                             Text(destination.name)
-                                .font(.headline)
                                 .lineLimit(1)
                                 .truncationMode(.tail)
-                            
+                            if (destination.comments.count>0) {
+                                Image(systemName: "book.pages")
+                            }
                         }
                         HStack {
                             if (destination.residenceLink.count>0) {
