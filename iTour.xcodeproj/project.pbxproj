@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4703E62F2B3017BE00869975 /* W3WSwiftComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 4703E62E2B3017BE00869975 /* W3WSwiftComponents */; };
 		4703E6312B3019E800869975 /* what3words.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4703E6302B3019E800869975 /* what3words.swift */; };
+		4768DA972B70CC0800E17A52 /* ShowAndEditTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4768DA962B70CC0800E17A52 /* ShowAndEditTextView.swift */; };
 		47AE02E72B24A76C003EBD81 /* HighlightedTextEditor in Frameworks */ = {isa = PBXBuildFile; productRef = 47AE02E62B24A76C003EBD81 /* HighlightedTextEditor */; };
 		47C860482B1DE4F700335A29 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 47C860472B1DE4F700335A29 /* PopupView */; };
 		5141A3DA2AC88CF6007CE882 /* DestinationListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5141A3D92AC88CF6007CE882 /* DestinationListingView.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		4703E6302B3019E800869975 /* what3words.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = what3words.swift; sourceTree = "<group>"; };
+		4768DA962B70CC0800E17A52 /* ShowAndEditTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAndEditTextView.swift; sourceTree = "<group>"; };
 		47C860442B1DD83C00335A29 /* iTour.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iTour.entitlements; sourceTree = "<group>"; };
 		47C860452B1DD84A00335A29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5141A3D92AC88CF6007CE882 /* DestinationListingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationListingView.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				514A1D302AC87E14004CBD3B /* ContentView.swift */,
 				5141A3D92AC88CF6007CE882 /* DestinationListingView.swift */,
 				514A1D3E2AC888F0004CBD3B /* EditDestinationView.swift */,
+				4768DA962B70CC0800E17A52 /* ShowAndEditTextView.swift */,
 				4703E6302B3019E800869975 /* what3words.swift */,
 				514A1D3C2AC87E73004CBD3B /* Destination.swift */,
 				5141A3DB2AC891F8007CE882 /* Sight.swift */,
@@ -178,6 +181,7 @@
 				514A1D3D2AC87E73004CBD3B /* Destination.swift in Sources */,
 				5141A3DC2AC891F8007CE882 /* Sight.swift in Sources */,
 				514A1D3F2AC888F0004CBD3B /* EditDestinationView.swift in Sources */,
+				4768DA972B70CC0800E17A52 /* ShowAndEditTextView.swift in Sources */,
 				5141A3DA2AC88CF6007CE882 /* DestinationListingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

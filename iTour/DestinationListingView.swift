@@ -22,9 +22,15 @@ struct DestinationListingView: View {
                         
                         HStack{
                             Text(destination.day)
+                                .bold()
+                                .foregroundColor(.blue)
                             Text(destination.name)
                                 .lineLimit(1)
                                 .truncationMode(.tail)
+                                .foregroundColor(.blue)
+                                .bold()
+                                .font(.title2)
+
                             if (destination.comments.count>0) {
                                 Image(systemName: "book.pages")
                             }

@@ -21,6 +21,8 @@ struct EditDestinationView: View {
         Form {
             TextField("Dag", text: $destination.day)
                 .bold()
+//                .foregroundColor(.blue)
+            
             DatePicker("Date", selection: $destination.date, displayedComponents: .date)
             
                 .datePickerStyle(.compact)
@@ -29,45 +31,50 @@ struct EditDestinationView: View {
             
             HStack {
                 Image(systemName: "house")
-                TextField("Residence", text: $destination.residence)
+                TextField("Residence Name", text: $destination.residence)
             }
             //
             HStack {
-                Button("Open") {
+                Button(action: {
                     if let url = URL(string: destination.residenceLink) {
                         UIApplication.shared.open(url)
                     } else {
-                        // Handle invalid URL
                         print("Invalid URL")
                     }
+                }) {
+                    HStack {
+                        Image(systemName: "house")
+                    }
                 }
-                Spacer()
-                TextField("Residence", text: $destination.residenceLink)
+                
+                TextField("Residence Link", text: $destination.residenceLink)
                 
             }
             //
             HStack {
-                
-                Button("Open") {
+                Button(action: {
                     if let url = URL(string: destination.link) {
                         UIApplication.shared.open(url)
                     } else {
-                        // Handle invalid URL
                         print("Invalid URL")
                     }
+                }) {
+                    HStack {
+                        Image(systemName: "mappin")
+                    }
                 }
-                Spacer()
+                
                 TextField("Link", text: $destination.link)
                 
             }
+
             //
-            
-            
-            HighlightedTextEditor(text: $destination.comments, highlightRules: .markdown)
-                .frame(height: 150)
-            
-            HighlightedTextEditor(text: $destination.remarks, highlightRules: .markdown)
-                .frame(height: 300)
+            NavigationLink(destination: ShowAndEditTextView(comments: $destination.comments)) {
+                                Text("Comments")
+                            }
+            NavigationLink(destination: ShowAndEditTextView(comments: $destination.remarks)) {
+                                Text("Remarks")
+                            }
             
             Section("Priority") {
                 Picker("Priority", selection: $destination.priority) {
