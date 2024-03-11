@@ -10,20 +10,24 @@ import SwiftUI
 
 struct DestinationListingView: View {
     @Environment(\.modelContext) var modelContext
-    @Query(sort: [SortDescriptor(\Destination.priority, order: .reverse), SortDescriptor(\Destination.name)]) var destinations: [Destination]
+    @Query(sort: [SortDescriptor(\Destination.priority, order: .forward),
+                  SortDescriptor(\Destination.day)]) var destinations: [Destination]
     
     @State var showingPopup = false
     
     var body: some View {
         List {
-            ForEach(destinations) { destination in
+            ForEach(destinations.filter { $0.date >= Date() }) { destination in
                 NavigationLink(value: destination) {
                     VStack(alignment: .leading) {
                         
                         HStack{
-                            Text(destination.day)
-                                .bold()
-                                .foregroundColor(.blue)
+//                            Text("\(destination.priority)")
+                            if (!destination.day.isEmpty) {
+                                Text(destination.day)
+                                    .bold()
+                                    .foregroundColor(Color(hex: "e84393"))
+                            }
                             Text(destination.name)
                                 .lineLimit(1)
                                 .truncationMode(.tail)
@@ -49,6 +53,7 @@ struct DestinationListingView: View {
                     }
                 }
             }
+          
             .onDelete(perform: deleteDestinations)
         }
     }

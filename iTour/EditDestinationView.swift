@@ -19,11 +19,13 @@ struct EditDestinationView: View {
     
     var body: some View {
         Form {
-            TextField("Dag", text: $destination.day)
-                .bold()
-//                .foregroundColor(.blue)
             
             DatePicker("Date", selection: $destination.date, displayedComponents: .date)
+                .datePickerStyle(.compact)
+            
+            TextField("Time", text: $destination.day)
+                .bold()
+                .foregroundColor(Color(hex: "e84393"))
             
                 .datePickerStyle(.compact)
             TextField("Name", text: $destination.name)
@@ -78,9 +80,9 @@ struct EditDestinationView: View {
             
             Section("Priority") {
                 Picker("Priority", selection: $destination.priority) {
-                    Text("-").tag(1)
-                    Text("++").tag(2)
-                    Text("+++").tag(3)
+                    Text("++").tag(1)
+                    Text("+").tag(2)
+                    Text("-").tag(3)
                 }
                 .pickerStyle(.segmented)
             }

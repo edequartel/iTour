@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftData
+import SwiftUI
 
 @Model
 class Destination {
@@ -22,6 +23,7 @@ class Destination {
     var priority: Int = 0
     var remarks: String = ""
     var what3words: String = ""
+//    var color: Color = .blue
 //    @Relationship(deleteRule: .cascade) var sights = [Sight]()
 //    @Relationship(deleteRule: .cascade) var sights: [Sight]?
 
